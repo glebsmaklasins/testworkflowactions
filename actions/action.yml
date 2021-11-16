@@ -1,0 +1,10 @@
+name: "Test and Lint Composite Action"
+description: "Tests and lints on each push or pr action"
+
+runs:
+  using: "composite"
+  steps:
+  - name: "test"
+    run: npm t
+  - name: "lint"
+    run: npx eslint .
